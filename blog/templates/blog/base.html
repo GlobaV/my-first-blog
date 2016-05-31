@@ -12,7 +12,7 @@
                 {% if user.is_authenticated %}
         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
     {% endif %}
-                <h1><a href="/">Globa's-Blog</a></h1>
+                <h1 class="h"><a href="/">Globa's-Blog</a></h1>
             </div>
             <div class="content container">
                 <div class="row">
@@ -22,5 +22,36 @@
                     </div>
                 </div>
             </div>
+<button id="scrollup"><span class="glyphicon glyphicon-chevron-up"></span></button>
+<script>
+window.onload = function() {
+
+var scrollUp = document.getElementById('scrollup'); 
+
+scrollUp.onmouseover = function() {
+scrollUp.style.opacity=0.8;
+scrollUp.style.filter = 'alpha(opacity=30)';
+};
+
+scrollUp.onmouseout = function() {
+scrollUp.style.opacity = 0.5;
+scrollUp.style.filter = 'alpha(opacity=50)';
+};
+
+scrollUp.onclick = function() { 
+window.scrollTo(0,0);
+};
+
+// show button
+
+window.onscroll = function () { 
+if ( window.pageYOffset > 0 ) {
+scrollUp.style.display = 'block';
+} else {
+scrollUp.style.display = 'none';
+}
+};
+};
+</script>
         </body>
     </html>
